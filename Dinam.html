@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prezentare Dinam - Fizică</title>
+  <style>
+    .z
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+    }
+    .slide.active {
+      left: 0;
+      opacity: 1;
+    }
+    h1, p {
+      margin: 0;
+    }
+    img {
+      max-width: 40%;
+      height: auto;
+    }
+    iframe {
+      width: 80%;
+      height: 850px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide active">
+    <h1>Prezentare: Dinam - Fizică</h1>
+  </div>
+
+  <div class="slide">
+    <p>Slide 1 - Introducere în Dinam: ramură a fizicii care studiază mișcarea și forțele care o determină.</p>
+  </div>
+  
+  <div class="slide">
+    <p>Slide 2 - Legea I a lui Newton: Un obiect își menține starea de repaus sau de mișcare rectilinie uniformă dacă asupra lui nu acționează forțe exterioare.</p>
+  </div>
+
+  <div class="slide">
+    <p>Slide 3 - Legea II a lui Newton: F = m * a</p>
+  </div>
+
+  <div class="slide">
+    <p>Slide 4 - Legea III a lui Newton: Acțiunea și reacțiunea sunt egale și de sens contrar.</p>
+  </div>
+
+  <div class="slide">
+    <p>Slide 5 - Forțe frecvent întâlnite: gravitațională, elastică, de frecare etc.</p>
+  </div>
+
+  <div class="slide">
+    <p>Slide 6 - Aplicații ale legilor lui Newton în viața reală.</p>
+  </div>
+
+  <div class="slide">
+    <p>Slide 7 - Importanța masei și a accelerației în determinarea forței.</p>
+  </div>
+
+  <div class="slide">
+    <iframe src="https://www.youtube.com/embed/Z6ShIFNFkZQ?si=mu6ZS1AMmF4RX0Fz" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="slide">
+    <div>
+      <img src="https://via.placeholder.com/600x400?text=Imagine+1" alt="Imagine 1">
+      <img src="https://via.placeholder.com/600x400?text=Imagine+2" alt="Imagine 2">
+    </div>
+  </div>
+
+  <div class="slide">
+    <p>Slide 10 - Recapitulare: legile lui Newton și aplicațiile lor.</p>
+  </div>
+
+  <div class="slide">
+    <p>Slide 11 - Întrebări și discuții.</p>
+  </div>
+
+  <div class="slide">
+    <h1>Mulțumesc pentru atenție!</h1>
+    <img class="z" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMThfYV9jdXRlXzNkX29mX2FfbGlrZV9lbW9qaV9pc29sYXRlZF9vbl9hX3doaXRlX18wMTI4NDc0Ny1hNTc3LTRmYmEtYjZjNS02YjBhMzc3MmEzOWIucG5n.png">
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      if (current < slides.length - 1) {
+        current++;
+        showSlide(current);
+      }
+    }
+
+    function prevSlide() {
+      if (current > 0) {
+        current--;
+        showSlide(current);
+      }
+    }
+
+    document.body.addEventListener('wheel', (e) => {
+      if (e.deltaX > 50) {
+        nextSlide();
+      } else if (e.deltaX < -50) {
+        prevSlide();
+      }
+    });
+
+    let lastTap = 0;
+    document.body.addEventListener('touchend', (e) => {
+      const now = new Date().getTime();
+      const touchX = e.changedTouches[0].clientX;
+      const screenWidth = window.innerWidth;
+
+      if (now - lastTap < 300) {
+        if (touchX > screenWidth / 2) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+      lastTap = now;
+    });
+
+    document.body.addEventListener('dblclick', (e) => {
+      const screenWidth = window.innerWidth;
+      if (e.clientX > screenWidth / 2) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    });
+  </script>
+
+</body>
+</html>
