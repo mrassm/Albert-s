@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prezentare Dinam - Fizică</title>
   <style>
-    .z
     body, html {
       margin: 0;
       padding: 0;
@@ -14,17 +13,14 @@
       overflow: hidden;
       font-family: Arial, sans-serif;
       background-color: #f0f0f0;
+      font-size: 25px;
     }
     .slide {
       position: absolute;
       top: 0;
-      left: 100%;
+      left: 0;
       width: 100%;
       height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
       padding: 20px;
       box-sizing: border-box;
       opacity: 0;
@@ -34,16 +30,24 @@
       left: 0;
       opacity: 1;
     }
-    h1, p {
-      margin: 0;
+    .slide.next {
+      left: 100%; /* Slide-ul următor începe din dreapta */
+    }
+    .slide.prev {
+      left: -100%; /* Slide-ul anterior începe din stânga */
     }
     img {
       max-width: 40%;
-      height: auto;
+      height: 50%;
     }
     iframe {
       width: 80%;
       height: 850px;
+    }
+    h1, h2, p {
+      margin-top: 40px; /* Adaugă spațiu de 40px deasupra titlurilor */
+      margin-left: 150px;
+      margin-right: 150px;
     }
   </style>
 </head>
@@ -54,11 +58,23 @@
   </div>
 
   <div class="slide">
-    <p>Slide 1 - Introducere în Dinam: ramură a fizicii care studiază mișcarea și forțele care o determină.</p>
+    <h2>Introducere</h2><br><br><br><br>
+    <p>Un dinam este un generator electric care creează curent continuu folosind un colector comutator.</p><br><br>
+    <p>Fizicianul italian Antonio Pacinotti (1841 – 1912) construiește în jurul anului 1860 un generator de curent continuu, pe care inginerul belgian Zénobe Gramme (1826 - 1901) îl perfecționează, astfel că în 1870, realizează primul generator electric pentru uz industrial, așa-numitul dinam a lui Gramme.</p>
   </div>
   
   <div class="slide">
-    <p>Slide 2 - Legea I a lui Newton: Un obiect își menține starea de repaus sau de mișcare rectilinie uniformă dacă asupra lui nu acționează forțe exterioare.</p>
+    <img src="https://tactileimages.org/wp-content/uploads/2020/08/RO-Catalog-Electrica-20206-1080x675.png" alt="" style="width: 30%; height: 30%;">
+    <p>Imaginea prezintă primul dinam sau generator electric, invenție a fizicianului american Michael Faraday, denumit și Discul lui Faraday. <br>
+    Acesta este alcătuit din două părți principale, la fel ca în cazul motorului electric, și anume: partea fixă, denumită stator, care este repezentată de un magnet în formă de potcoavă sau semicerc alungit, marginea stângă, și partea mobilă, denumită rotor, care se rotește și este reprezentată de un disc din cupru, marginea dreaptă.<br>     
+    Magnetul este redat printr-un semicerc gol, cu capetele din dreapta alungite, unul până la centrul discului, prin față, și unul până la capătul drept al discului, prin spate.<br>
+    Suportul înalt și vertical, de care este prins magnetul în poziție orizontală, se află în marginea stângă a dinamului, evidențiat printr-un dreptunghi subțire și vertical cu capătul de sus mai lat, plin în relief.<br>
+    Discul din cupru, un bun conductor electric, este redat printr-un cerc mare, umplut cu textură punctată, aflat în partea dreaptă a dinamului, prins de un suport vertical, redat plin în relief, pe centrul discului.<br>
+    Discul este fixat pe un ax din bronz, redat pe centrul discului cu un cerc mic și gol, încadrat de un cerc mai mare, plin în relief.<br>
+    Manivela de care se rotește manual discul este redată în partea central dreaptă a discului, printr-un dreptunghi orizontal subțire, cu un capăt de dreptunghi vertical mai scurt, plin în relief.<br>
+    Colectorul de curent, era apăsat cu mâna de marginea discului, atunci când discul era rotit și elibera curentul electric prin extremități.<br>
+    Colectorul este redat în partea stângă a discului, printr-o tijă în formă de linie verticală și îngroșată, cu capetele îndoite.<br>
+    Suportul de bază pe care este montat dinamul este reprezentat în partea inferioară, ca un dreptunghi orizontal, subțire și plin în relief.</p>
   </div>
 
   <div class="slide">
@@ -109,24 +125,30 @@
     const slides = document.querySelectorAll('.slide');
     let current = 0;
 
-    function showSlide(index) {
+    function showSlide(index, direction) {
       slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) slide.classList.add('active');
+        slide.classList.remove('active', 'next', 'prev');
+        if (i === index) {
+          slide.classList.add('active');
+        } else if (i < index && direction === 'next') {
+          slide.classList.add('prev');
+        } else if (i > index && direction === 'prev') {
+          slide.classList.add('next');
+        }
       });
     }
 
     function nextSlide() {
       if (current < slides.length - 1) {
         current++;
-        showSlide(current);
+        showSlide(current, 'next');
       }
     }
 
     function prevSlide() {
       if (current > 0) {
         current--;
-        showSlide(current);
+        showSlide(current, 'prev');
       }
     }
 
@@ -160,6 +182,14 @@
         nextSlide();
       } else {
         prevSlide();
+      }
+    });
+
+    document.body.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        nextSlide(); // Tasta săgeată dreapta
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide(); // Tasta săgeată stânga
       }
     });
   </script>
