@@ -2,8 +2,8 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prezentare Dinam - Fizică</title>
+  <meta name="viewport" content="width=width=device-width, initial-scale=1.0">
+  <title>Prezentare Dinam</title>
   <style>
     body, html {
       margin: 0;
@@ -12,9 +12,24 @@
       height: 100%;
       overflow: hidden;
       font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
       font-size: 25px;
+      position: relative;
     }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('./art.jpeg'); /* Imaginea de fundal */
+      background-size: cover;
+      background-position: center;
+      filter: brightness(50%); /* Reduce luminozitatea imaginii */
+      z-index: -1;
+    }
+
     .slide {
       position: absolute;
       top: 0;
@@ -25,17 +40,23 @@
       box-sizing: border-box;
       opacity: 0;
       transition: all 0.5s ease-in-out;
+      color: white; /* Text alb pentru contrast */
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Umbra textului pentru lizibilitate */
     }
+
     .slide.active {
       left: 0;
       opacity: 1;
     }
+
     .slide.next {
-      left: 100%; /* Slide-ul următor începe din dreapta */
+      left: 100%;
     }
+
     .slide.prev {
-      left: -100%; /* Slide-ul anterior începe din stânga */
+      left: -100%;
     }
+
     img {
       max-width: 40%;
       height: 50%;
@@ -59,12 +80,13 @@
 
   <div class="slide">
     <h2>Introducere</h2><br><br><br><br>
-    <p>Un dinam este un generator electric care creează curent continuu folosind un colector comutator.</p><br><br>
+    <p>Un dinam este un generator electric care creează curent continuu folosind un colector comutator.</p><br>
+    <p>Astăzi, alternatorul mai simplu domină generarea de energie pe scară largă, din motive de eficiență, fiabilitate și costuri. Un dinam are dezavantajele unui comutator mecanic. De asemenea, transformarea curentului alternativ în curent continuu utilizând redresoare (cum ar fi tuburile de vid sau mai recent prin intermediul tehnologiei în stare solidă) este eficientă și, de obicei, economică. </p> <br>
     <p>Fizicianul italian Antonio Pacinotti (1841 – 1912) construiește în jurul anului 1860 un generator de curent continuu, pe care inginerul belgian Zénobe Gramme (1826 - 1901) îl perfecționează, astfel că în 1870, realizează primul generator electric pentru uz industrial, așa-numitul dinam a lui Gramme.</p>
   </div>
   
   <div class="slide">
-    <img src="https://tactileimages.org/wp-content/uploads/2020/08/RO-Catalog-Electrica-20206-1080x675.png" alt="" style="width: 30%; height: 30%;">
+    <img src="https://tactileimages.org/wp-content/uploads/2020/08/RO-Catalog-Electrica-20206-1080x675.png" alt="" style="width: 35%; height: 40%;">
     <p>Imaginea prezintă primul dinam sau generator electric, invenție a fizicianului american Michael Faraday, denumit și Discul lui Faraday. <br>
     Acesta este alcătuit din două părți principale, la fel ca în cazul motorului electric, și anume: partea fixă, denumită stator, care este repezentată de un magnet în formă de potcoavă sau semicerc alungit, marginea stângă, și partea mobilă, denumită rotor, care se rotește și este reprezentată de un disc din cupru, marginea dreaptă.<br>     
     Magnetul este redat printr-un semicerc gol, cu capetele din dreapta alungite, unul până la centrul discului, prin față, și unul până la capătul drept al discului, prin spate.<br>
@@ -85,7 +107,7 @@
     <p>Slide 4 - Legea III a lui Newton: Acțiunea și reacțiunea sunt egale și de sens contrar.</p>
   </div>
 
-  <div class="slide">
+  <div class="slide">  
     <p>Slide 5 - Forțe frecvent întâlnite: gravitațională, elastică, de frecare etc.</p>
   </div>
 
@@ -95,7 +117,7 @@
 
   <div class="slide">
     <p>Slide 7 - Importanța masei și a accelerației în determinarea forței.</p>
-  </div>
+  </div> 
 
   <div class="slide">
     <iframe src="https://www.youtube.com/embed/Z6ShIFNFkZQ?si=mu6ZS1AMmF4RX0Fz" frameborder="0" allowfullscreen></iframe>
