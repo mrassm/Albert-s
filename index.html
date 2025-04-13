@@ -2,7 +2,7 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prezentare Dinam</title>
   <style>
     body, html {
@@ -12,7 +12,7 @@
       height: 100%;
       overflow: hidden;
       font-family: Arial, sans-serif;
-      font-size: 25px;
+      font-size: 35px;
       position: relative;
     }
 
@@ -26,7 +26,7 @@
       background-image: url('./art.jpeg'); /* Imaginea de fundal */
       background-size: cover;
       background-position: center;
-      filter: brightness(50%); /* Reduce luminozitatea imaginii */
+      filter: brightness(50%);
       z-index: -1;
     }
 
@@ -40,8 +40,8 @@
       box-sizing: border-box;
       opacity: 0;
       transition: all 0.5s ease-in-out;
-      color: white; /* Text alb pentru contrast */
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Umbra textului pentru lizibilitate */
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
     }
 
     .slide.active {
@@ -59,14 +59,16 @@
 
     img {
       max-width: 40%;
-      height: 50%;
+      height: auto;
     }
+
     iframe {
       width: 80%;
-      height: 850px;
+      height: 500px;
     }
+
     h1, h2, p {
-      margin-top: 40px; /* Adaugă spațiu de 40px deasupra titlurilor */
+      margin-top: 40px;
       margin-left: 150px;
       margin-right: 150px;
     }
@@ -75,72 +77,75 @@
 <body>
 
   <div class="slide active">
-    <h1>Prezentare: Dinam - Fizică</h1>
+    <h1>Dinamul</h1>
+    <p>Albert Bastoreala si Cosmin Dragu<br>Clasa a VII-a A</p>
   </div>
 
   <div class="slide">
-    <h2>Introducere</h2><br><br><br><br>
-    <p>Un dinam este un generator electric care creează curent continuu folosind un colector comutator.</p><br>
-    <p>Astăzi, alternatorul mai simplu domină generarea de energie pe scară largă, din motive de eficiență, fiabilitate și costuri. Un dinam are dezavantajele unui comutator mecanic. De asemenea, transformarea curentului alternativ în curent continuu utilizând redresoare (cum ar fi tuburile de vid sau mai recent prin intermediul tehnologiei în stare solidă) este eficientă și, de obicei, economică. </p> <br>
-    <p>Fizicianul italian Antonio Pacinotti (1841 – 1912) construiește în jurul anului 1860 un generator de curent continuu, pe care inginerul belgian Zénobe Gramme (1826 - 1901) îl perfecționează, astfel că în 1870, realizează primul generator electric pentru uz industrial, așa-numitul dinam a lui Gramme.</p>
-  </div>
-  
-  <div class="slide">
-    <img src="https://tactileimages.org/wp-content/uploads/2020/08/RO-Catalog-Electrica-20206-1080x675.png" alt="" style="width: 35%; height: 40%;">
-    <p>Imaginea prezintă primul dinam sau generator electric, invenție a fizicianului american Michael Faraday, denumit și Discul lui Faraday. <br>
-    Acesta este alcătuit din două părți principale, la fel ca în cazul motorului electric, și anume: partea fixă, denumită stator, care este repezentată de un magnet în formă de potcoavă sau semicerc alungit, marginea stângă, și partea mobilă, denumită rotor, care se rotește și este reprezentată de un disc din cupru, marginea dreaptă.<br>     
-    Magnetul este redat printr-un semicerc gol, cu capetele din dreapta alungite, unul până la centrul discului, prin față, și unul până la capătul drept al discului, prin spate.<br>
-    Suportul înalt și vertical, de care este prins magnetul în poziție orizontală, se află în marginea stângă a dinamului, evidențiat printr-un dreptunghi subțire și vertical cu capătul de sus mai lat, plin în relief.<br>
-    Discul din cupru, un bun conductor electric, este redat printr-un cerc mare, umplut cu textură punctată, aflat în partea dreaptă a dinamului, prins de un suport vertical, redat plin în relief, pe centrul discului.<br>
-    Discul este fixat pe un ax din bronz, redat pe centrul discului cu un cerc mic și gol, încadrat de un cerc mai mare, plin în relief.<br>
-    Manivela de care se rotește manual discul este redată în partea central dreaptă a discului, printr-un dreptunghi orizontal subțire, cu un capăt de dreptunghi vertical mai scurt, plin în relief.<br>
-    Colectorul de curent, era apăsat cu mâna de marginea discului, atunci când discul era rotit și elibera curentul electric prin extremități.<br>
-    Colectorul este redat în partea stângă a discului, printr-o tijă în formă de linie verticală și îngroșată, cu capetele îndoite.<br>
-    Suportul de bază pe care este montat dinamul este reprezentat în partea inferioară, ca un dreptunghi orizontal, subțire și plin în relief.</p>
+    <h2>Ce este un dinam?</h2>
+    <p>Un dinam este un aparat care transformă energia mecanică în energie electrică. Se folosește la biciclete, mașini și alte dispozitive.</p>
   </div>
 
   <div class="slide">
-    <p>Slide 3 - Legea II a lui Newton: F = m * a</p>
+    <h2>Cum funcționează dinamul?</h2>
+    <p>Când roata se învârte, magnetul din interior se rotește și creează un câmp magnetic. Acesta generează curent electric în bobina de cupru.</p>
   </div>
 
   <div class="slide">
-    <p>Slide 4 - Legea III a lui Newton: Acțiunea și reacțiunea sunt egale și de sens contrar.</p>
-  </div>
-
-  <div class="slide">  
-    <p>Slide 5 - Forțe frecvent întâlnite: gravitațională, elastică, de frecare etc.</p>
-  </div>
-
-  <div class="slide">
-    <p>Slide 6 - Aplicații ale legilor lui Newton în viața reală.</p>
-  </div>
-
-  <div class="slide">
-    <p>Slide 7 - Importanța masei și a accelerației în determinarea forței.</p>
-  </div> 
-
-  <div class="slide">
-    <iframe src="https://www.youtube.com/embed/Z6ShIFNFkZQ?si=mu6ZS1AMmF4RX0Fz" frameborder="0" allowfullscreen></iframe>
+    <h2>Părțile principale ale unui dinam</h2>
+    <ul>
+      <li>Magnet</li>
+      <li>Bobină (fir de cupru)</li>
+      <li>Ax rotativ</li>
+      <li>Carcasă</li>
+    </ul>
   </div>
 
   <div class="slide">
-    <div>
-      <img src="https://via.placeholder.com/600x400?text=Imagine+1" alt="Imagine 1">
-      <img src="https://via.placeholder.com/600x400?text=Imagine+2" alt="Imagine 2">
-    </div>
+    <h2>Tipuri de dinam</h2>
+    <ul>
+      <li>Dinamul de bicicletă</li>
+      <li>Alternatorul (dinam pentru mașini)</li>
+      <li>Generatoare industriale (de mari dimensiuni)</li>
+    </ul>
   </div>
 
   <div class="slide">
-    <p>Slide 10 - Recapitulare: legile lui Newton și aplicațiile lor.</p>
+    <h2>Unde se folosesc dinamurile?</h2>
+    <p>Dinamurile sunt folosite la iluminatul bicicletelor, în alternatoarele auto și în centralele electrice (sub formă de generatoare).</p>
   </div>
 
   <div class="slide">
-    <p>Slide 11 - Întrebări și discuții.</p>
+    <h2>Avantaje ale dinamului</h2>
+    <ul>
+      <li>Nu are nevoie de baterii</li>
+      <li>Produce curent doar când e necesar</li>
+      <li>Este ecologic</li>
+    </ul>
   </div>
 
   <div class="slide">
-    <h1>Mulțumesc pentru atenție!</h1>
-    <img class="z" src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMThfYV9jdXRlXzNkX29mX2FfbGlrZV9lbW9qaV9pc29sYXRlZF9vbl9hX3doaXRlX18wMTI4NDc0Ny1hNTc3LTRmYmEtYjZjNS02YjBhMzc3MmEzOWIucG5n.png">
+    <h2>Dezavantaje</h2>
+    <ul>
+      <li>Produce puțină energie</li>
+      <li>Funcționează doar când roata se mișcă</li>
+      <li>Îngreunează puțin deplasarea</li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h2>Experiment simplu</h2>
+    <p>Pune un dinam pe o roată de bicicletă. Conectează-l la un bec mic. Când învârți roata, becul se aprinde – se produce electricitate!</p>
+  </div>
+
+  <div class="slide">
+    <h2>Concluzie</h2>
+    <p>Dinamul este o invenție ingenioasă care ne arată cum mișcarea se poate transforma în electricitate. Îl folosim zilnic fără să ne dăm seama!</p>
+  </div>
+
+  <div class="slide">
+    <h2>Mulțumesc pentru atenție!</h2>
+    <img src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMThfYV9jdXRlXzNkX29mX2FfbGlrZV9lbW9qaV9pc29sYXRlZF9vbl9hX3doaXRlX18wMTI4NDc0Ny1hNTc3LTRmYmEtYjZjNS02YjBhMzc3MmEzOWIucG5n.png" alt="Mulțumesc" />
   </div>
 
   <script>
@@ -209,9 +214,9 @@
 
     document.body.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') {
-        nextSlide(); // Tasta săgeată dreapta
+        nextSlide();
       } else if (e.key === 'ArrowLeft') {
-        prevSlide(); // Tasta săgeată stânga
+        prevSlide();
       }
     });
   </script>
